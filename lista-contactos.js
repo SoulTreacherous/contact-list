@@ -51,22 +51,22 @@ let listContacts = [
   }
 ]
 
-function agregarContacto(nombre) {
-  listContacts.push(nombre);
+function agregarContacto(contacto) { //cambio de "nombre" => contacto
+  listContacts.push(contacto);
 }
 
 let nuevoContacto = {
   id: 4,
   nombres: "María",
   apellidos: "García",
-  telefono: "456-789-0123",
-  ubicaciones: [],
+  telefonos: 4567890123,
+  ubicaciones: "",
   ciudad: "",
   direccion: ""
-};
+}
 
 function eliminarContacto(id) {
-  const nuevosContactos = listContacts.filter(nombre => nombre.id !== id);
+  const nuevosContactos = listContacts.filter(contacto => contacto.id !== id); //cambio de "nombre" => contacto
   listContacts = nuevosContactos;
 }
 
@@ -78,15 +78,3 @@ agregarContacto(nuevoContacto);
 eliminarContacto(2);
 
 printContacts();
-
-/*
-function eliminarContacto(nombre) {
-  const nuevosContactos = [];
-  for (let i = 0; i < listContacts.length; i++) {
-    if (listContacts[i][0] !== nombre) {
-      nuevosContactos.push(listContacts[i]);
-    }
-  }
-  listContacts = nuevosContactos;
-}
-*/
